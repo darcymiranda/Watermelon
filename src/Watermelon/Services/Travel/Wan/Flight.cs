@@ -82,12 +82,12 @@ namespace Watermelon.Services.Travel.Wan
 
         private async Task<SearchResponse> RetrieveSearchResults(string searchId, string tripId, string fareId = null)
         {
-            var body = new
+            var body = new RetrieveSearchRequest
             {
-                id = fareId ?? Guid.NewGuid().ToString(),
-                search_id = searchId,
-                trip_id = tripId,
-                fares_query_type = "route"
+                Id = fareId ?? Guid.NewGuid().ToString(),
+                SearchId = searchId,
+                TripId = tripId,
+                FaresQueryType = "route"
             };
             
             var response = await _client.PostAsync(
