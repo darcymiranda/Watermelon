@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Watermelon.Models.Api.Flight.Wan
 {
-    public class SearchRequest 
+    public class RegisterSearchRequest 
     {
         [JsonProperty(PropertyName = "trips")]
         public List<Trip> Trips { get; set; }

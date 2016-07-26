@@ -38,10 +38,10 @@ namespace Watermelon.Controllers
 
             DateTime departDateTime = DateTime.ParseExact(departDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             DateTime returnDateTime = DateTime.ParseExact(returnDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            
+            var response = await _flight.Search(departAirport, arriveAirport, departDateTime, returnDateTime, adultCount);
 
-            SearchResponse searchResults = await _flight.Search(departAirport, arriveAirport, departDateTime, returnDateTime, adultCount);
-
-            return new ObjectResult(searchResults);
+            return new ObjectResult(response);
         }
     }
 }

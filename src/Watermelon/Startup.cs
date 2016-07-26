@@ -57,7 +57,8 @@ namespace Watermelon
             services.AddTransient<IFlight, Flight>();
             
             // Using fake local responses
-            services.AddScoped(p => new HttpClient(new MockHttpClientResponseHandler()));
+            //services.AddScoped(p => new HttpClient(new MockHttpClientResponseHandler()));
+            services.AddScoped(p => new HttpClient());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

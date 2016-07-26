@@ -30,6 +30,7 @@ namespace Watermelon
                 public class FlightEndpoints
                 {
                     public string Search { get; set; }
+                    public string Fare { get; set; }
                 }
 
                 public class HotelEndpoints

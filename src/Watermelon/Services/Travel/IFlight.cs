@@ -9,6 +9,7 @@ namespace Watermelon.Services.Travel
 {
     public interface IFlight
     {
-        Task<SearchResponse> Search(Airport beginAirport, Airport endAirport, DateTime beginDate, DateTime endDate, int adultCount = 1);
+        // TODO: Create own SearchResponse, not one based on WAN
+        Task<SearchResponse> Search(Airport departAirport, Airport arriveAirport, DateTime departDate, DateTime returnDate, int adultCount = 1);
     }
 }
