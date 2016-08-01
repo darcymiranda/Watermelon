@@ -35,7 +35,9 @@ namespace Watermelon
 
                 public class HotelEndpoints
                 {
-
+                    public string SearchLocation { get; set; }
+                    public string RegisterSearch { get; set; }
+                    public string RetrieveSearch { get; set; }
                 }
             }
         }

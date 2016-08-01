@@ -10,10 +10,13 @@ namespace Watermelon.Models.Api.Flight.Wan
     {
         [JsonProperty("id")]
         public string Id { get; set; }
+
         [JsonProperty("search_id")]
         public string SearchId { get; set; }
+
         [JsonProperty("trip_id")]
         public string TripId { get; set; }
+
         [JsonProperty("fares_query_type")]
         public string FaresQueryType { get; set; }
     }

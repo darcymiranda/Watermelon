@@ -30,14 +30,14 @@ namespace Watermelon.Controllers
             if (string.IsNullOrEmpty(departAirportCode) || string.IsNullOrEmpty(arriveAirportCode) ||
                 string.IsNullOrEmpty(departDate) || string.IsNullOrEmpty(returnDate))
             {
-                return BadRequest();
+                return BadRequest("Missing required parameters");
             }
 
-            Airport departAirport = _locationContext.Airport.FirstOrDefault(a => a.Code == departAirportCode);
-            Airport arriveAirport = _locationContext.Airport.FirstOrDefault(a => a.Code == arriveAirportCode);
+            var departAirport = _locationContext.Airport.FirstOrDefault(a => a.Code == departAirportCode);
+            var arriveAirport = _locationContext.Airport.FirstOrDefault(a => a.Code == arriveAirportCode);
 
-            DateTime departDateTime = DateTime.ParseExact(departDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            DateTime returnDateTime = DateTime.ParseExact(returnDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var departDateTime = DateTime.ParseExact(departDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var returnDateTime = DateTime.ParseExact(returnDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             
             var response = await _flight.Search(departAirport, arriveAirport, departDateTime, returnDateTime, adultCount);
 
