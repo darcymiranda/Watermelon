@@ -6,6 +6,7 @@
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
     "font-awesome": "4.6.1",
-    "bootstrap": "3.3.6"
+    "bootstrap": "3.3.6",
+    "skel": "3.0.0"
   }
 }
